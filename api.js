@@ -1,9 +1,7 @@
 const frontend_base_url = "http://127.0.0.1:5500"
 const backend_base_url = "http://127.0.0.1:8000"
 
-window.onload = () => {
-    console.log("로딩되었음")
-}
+
 
 async function handleSignup() {
     const email = document.getElementById("email").value
@@ -78,12 +76,19 @@ async function handleMock() {
 }
 
 
+function chat() {
+    window.location.replace(`${backend_base_url}/chat`)
+}
+
+
 function handleLogout() {
     localStorage.removeItem("access")
     localStorage.removeItem("refresh")
     localStorage.removeItem("payload")
     alert("로그아웃 되었습니다!")
     location.reload()
+
+    
 }
 
 
@@ -102,3 +107,4 @@ function showPw() {
         pw2.type = "password"
     }
 }
+
